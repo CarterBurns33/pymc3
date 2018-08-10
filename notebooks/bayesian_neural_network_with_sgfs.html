@@ -209,7 +209,7 @@ method please refer to this post by Thomas Wiecki
 notebook follows a similar structure.</p>
 <div class="section" id="Stochastic-Gradient-Fisher-Scoring">
 <h2>Stochastic Gradient Fisher Scoring<a class="headerlink" href="#Stochastic-Gradient-Fisher-Scoring" title="Permalink to this headline">¶</a></h2>
-<p>Author: <a class="reference external" href="https://www.github.com/shkr">**shkr**</a></p>
+<p>Author: <a class="reference external" href="https://www.github.com/shkr">shkr</a></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Can we approximately sample from a Bayesian posterior distribution if we are only allowed to touch a small mini-batch of data-items for every sample we generate?
 </pre></div>
 </div>
@@ -217,8 +217,9 @@ notebook follows a similar structure.</p>
 rates (or epsilon valuees) samples from a normal approximation of the
 posterior, while for slow mixing rates it will mimic the behaviour of
 SGLD with a preconditioner matrix that is as parameter <code class="docutils literal notranslate"><span class="pre">B</span></code>.</p>
-<p>The mixing rate is controlled by epsilon which is $ = 2^{-}*step_size
-$</p>
+<p>The mixing rate is controlled by epsilon which is $
+<a href="#id1"><span class="problematic" id="id2">:raw-latex:`\epsilon `=
+2^{-:raw-latex:`</span></a>frac{t}{step_size_decay}`}*step_size $</p>
 <p>Here we run the sampling algorithm with a minibatch of the training
 samples of X_train. The <code class="docutils literal notranslate"><span class="pre">total_size</span></code> is <code class="docutils literal notranslate"><span class="pre">X_train.shape[0]</span></code>. If the
 preconditioner matrix is not specified, an identity matrix is used.</p>
@@ -627,7 +628,7 @@ is what that looks like:</p>
 <h2>Next steps<a class="headerlink" href="#Next-steps" title="Permalink to this headline">¶</a></h2>
 <p>This section was added with the introduction of the first approximate
 MCMC sampling algorithm in pymc3, Stochastic Gradient Fisher Scoring.
-The file <a href="#id1"><span class="problematic" id="id2">`sgmcmc.py &lt;&gt;`__</span></a> defines a BaseStochasticGradient class that
+The file <a href="#id3"><span class="problematic" id="id4">`sgmcmc.py &lt;&gt;`__</span></a> defines a BaseStochasticGradient class that
 can be extended to other approximate algorithms by only implementing
 <code class="docutils literal notranslate"><span class="pre">_initialize_values</span></code> and <code class="docutils literal notranslate"><span class="pre">mk_training_fn</span></code> methods</p>
 </div>
@@ -699,7 +700,7 @@ can be extended to other approximate algorithms by only implementing
       &copy;2017, The PyMC Development Team.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.5</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.6</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
       
       |

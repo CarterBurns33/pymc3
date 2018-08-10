@@ -856,14 +856,14 @@ example of LogNormal: <span class="math notranslate nohighlight">\(log(y) \sim \
 </div>
 </div>
 <div class="line-block">
-<div class="line">Notice from above that the named variable <code class="docutils literal notranslate"><span class="pre">x1_exp__</span></code> in the</div>
+<div class="line">Notice from above that the named variable <code class="docutils literal notranslate"><span class="pre">x1_exp__</span></code> in the
+<code class="docutils literal notranslate"><span class="pre">model</span></code> is Lognormal distributed.</div>
+<div class="line">Using similar approach, we can create ordered RVs following some
+distribution. For example, we can combine the <code class="docutils literal notranslate"><span class="pre">ordered</span></code>
+transformation and <code class="docutils literal notranslate"><span class="pre">logodds</span></code> transformation using <code class="docutils literal notranslate"><span class="pre">Chain</span></code> to
+create a 2D RV that satisfy
+<span class="math notranslate nohighlight">\(x_1, x_2 \sim \text{Uniform}(0, 1) \space and \space x_1&lt; x_2\)</span></div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">model</span></code> is Lognormal distributed.
-| Using similar approach, we can create ordered RVs following some
-distribution. For example, we can combine the <code class="docutils literal notranslate"><span class="pre">ordered</span></code> transformation
-and <code class="docutils literal notranslate"><span class="pre">logodds</span></code> transformation using <code class="docutils literal notranslate"><span class="pre">Chain</span></code> to create a 2D RV that
-satisfy
-<span class="math notranslate nohighlight">\(x_1, x_2 \sim \text{Uniform}(0, 1) \space and \space x_1&lt; x_2\)</span></p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [22]:
@@ -1049,7 +1049,7 @@ NUTS: [mu]
 </div>
 <p>As you can see, on a continuous model, PyMC3 assigns the NUTS sampler,
 which is very efficient even for complex models. PyMC3 also runs
-variational inference (i.e. ADVI) to find good starting parameters for
+variational inference (i.e.&nbsp;ADVI) to find good starting parameters for
 the sampler. Here we draw 1000 samples from the posterior and allow the
 sampler to adjust its parameters in an additional 500 iterations. These
 500 samples are discarded by default:</p>
@@ -1820,7 +1820,7 @@ shape of <code class="docutils literal notranslate"><span class="pre">x_shared</
       &copy;2017, The PyMC Development Team.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.5</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.6</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
       
       |

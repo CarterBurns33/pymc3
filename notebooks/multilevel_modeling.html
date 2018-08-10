@@ -538,11 +538,11 @@ indexing.</p>
 <h3>Conventional approaches<a class="headerlink" href="#Conventional-approaches" title="Permalink to this headline">¶</a></h3>
 <p>The two conventional alternatives to modeling radon exposure represent
 the two extremes of the bias-variance tradeoff:</p>
-<p><strong>*Complete pooling*</strong>:</p>
+<p><strong>Complete pooling</strong>:</p>
 <p>Treat all counties the same, and estimate a single radon level.</p>
 <div class="math notranslate nohighlight">
 \[y_i = \alpha + \beta x_i + \epsilon_i\]</div>
-<p><strong>*No pooling*</strong>:</p>
+<p><strong>No pooling</strong>:</p>
 <p>Model radon in each county independently.</p>
 <div class="math notranslate nohighlight">
 \[y_i = \alpha_{j[i]} + \beta x_i + \epsilon_i\]</div>
@@ -810,8 +810,8 @@ units are to large to combine them:</p>
 </div>
 <p>In a hierarchical model, parameters are viewed as a sample from a
 population distribution of parameters. Thus, we view them as being
-neither entirely different or exactly the same. This is <strong>*parital
-pooling*</strong>.</p>
+neither entirely different or exactly the same. This is <strong>parital
+pooling</strong>.</p>
 <div class="figure" id="id4">
 <img alt="hierarchical" src="http://f.cl.ly/items/1B3U223i002y3V2W3r0W/Screen%20Shot%202013-10-10%20at%208.25.05%20AM.png" />
 <p class="caption"><span class="caption-text">hierarchical</span></p>
@@ -1572,7 +1572,7 @@ can account for this by including the average of the individual
 predictors as a covariate in the model for the group intercept.</p>
 <div class="math notranslate nohighlight">
 \[\alpha_j = \gamma_0 + \gamma_1 u_j + \gamma_2 \bar{x} + \zeta_j\]</div>
-<p>These are broadly referred to as <strong>*contextual effects*</strong>.</p>
+<p>These are broadly referred to as <strong>contextual effects</strong>.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [39]:
@@ -1756,7 +1756,7 @@ model:</p>
 <li>a new individual within a new group</li>
 </ol>
 <p>For example, if we wanted to make a prediction for a new house with no
-basement in St. Louis county, we just need to sample from the radon
+basement in St.&nbsp;Louis county, we just need to sample from the radon
 model with the appropriate intercept.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
@@ -1960,7 +1960,7 @@ cannot do. Technometrics, 48(3), 432–435.</p>
       &copy;2017, The PyMC Development Team.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.5</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.6</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
       
       |

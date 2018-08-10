@@ -9,7 +9,7 @@
     <title>Analysis of An \(AR(1)\) Model in pyMC3 &#8212; PyMC3 3.5 documentation</title>
     <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
@@ -29,8 +29,6 @@
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          
-
           <div class="body" role="main">
             
   
@@ -236,9 +234,8 @@ Running on PyMC3 v3.4.1
 </div>
 <p>Consider the following AR(1) process, initialized in the infinite past:</p>
 <div class="math notranslate nohighlight">
-\[y_t = \theta y_{t-1} + \epsilon_t,\]</div>
-<p>where <span class="math notranslate nohighlight">\(\epsilon_t \sim iid{\cal N}(0,1)\)</span>. Suppose you’d like to
-learn about <span class="math notranslate nohighlight">\(\theta\)</span> from a a sample of observations
+\[ \begin{align}\begin{aligned}     y_t = \theta y_{t-1} + \epsilon_t,\\where :math:`\epsilon_t \sim iid{\cal N}(0,1)`. Suppose you'd like to\end{aligned}\end{align} \]</div>
+<p>learn about <span class="math notranslate nohighlight">\(\theta\)</span> from a a sample of observations
 <span class="math notranslate nohighlight">\(Y^T = \{ y_0, y_1,\ldots, y_T \}\)</span>.</p>
 <p>First, let’s generate our sample.</p>
 <div class="nbinput docutils container">
@@ -361,9 +358,8 @@ Std: 0.040 (exact = 0.040)
 <h2>Extension to AR(p)<a class="headerlink" href="#Extension-to-AR(p)" title="Permalink to this headline">¶</a></h2>
 <p>We can instead estimate an AR(2) model using pyMC3.</p>
 <div class="math notranslate nohighlight">
-\[y_t = \phi_1 y_{t-1} + \phi_2 y_{t-2} + \epsilon_t.\]</div>
-<p>The <code class="docutils literal notranslate"><span class="pre">AR</span></code> distribution infers the order of the process by size the of
-<code class="docutils literal notranslate"><span class="pre">rho</span></code> argmument passed to <code class="docutils literal notranslate"><span class="pre">AR</span></code>.</p>
+\[ \begin{align}\begin{aligned}   y_t = \phi_1 y_{t-1} + \phi_2 y_{t-2} + \epsilon_t.\\The ``AR`` distribution infers the order of the process by size the of\end{aligned}\end{align} \]</div>
+<p><code class="docutils literal notranslate"><span class="pre">rho</span></code> argmument passed to <code class="docutils literal notranslate"><span class="pre">AR</span></code>.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [6]:
@@ -441,7 +437,6 @@ The number of effective samples is smaller than 25% for some parameters.
 
 
           </div>
-          
         </div>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -490,8 +485,8 @@ The number of effective samples is smaller than 25% for some parameters.
       &copy;2017, The PyMC Development Team.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.5</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
       
       |
       <a href="../_sources/notebooks/AR.ipynb.txt"

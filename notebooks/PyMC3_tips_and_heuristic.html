@@ -9,7 +9,7 @@
     <title>PyMC3 Modeling tips and heuristic &#8212; PyMC3 3.5 documentation</title>
     <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
@@ -31,8 +31,6 @@
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          
-
           <div class="body" role="main">
             
   
@@ -265,17 +263,17 @@ STAN</a></p>
 <div class="section" id="Background-information">
 <h2>Background information<a class="headerlink" href="#Background-information" title="Permalink to this headline">¶</a></h2>
 <div class="line-block">
-<div class="line">Suppose we want to implement a <a href="#id1"><span class="problematic" id="id2">`</span></a>Conditional Autoregressive (CAR)</div>
-</div>
-<p>model &lt;<a class="reference external" href="http://www.statsref.com/HTML/index.html?car_models.html">http://www.statsref.com/HTML/index.html?car_models.html</a>&gt;`__ with
-examples in <a class="reference external" href="http://glau.ca/?p=340">WinBugs/PyMC2</a> and
-<a class="reference external" href="http://mc-stan.org/documentation/case-studies/mbjoseph-CARStan.html">STAN</a>.
-| For the sake of brevity, I will not go into the details of the CAR
+<div class="line">Suppose we want to implement a <a class="reference external" href="http://www.statsref.com/HTML/index.html?car_models.html">Conditional Autoregressive (CAR)
+model</a>
+with examples in <a class="reference external" href="http://glau.ca/?p=340">WinBugs/PyMC2</a> and
+<a class="reference external" href="http://mc-stan.org/documentation/case-studies/mbjoseph-CARStan.html">STAN</a>.</div>
+<div class="line">For the sake of brevity, I will not go into the details of the CAR
 model. The essential idea is autocorrelation, which is informally
 “correlation with itself”. In a CAR model, the probability of values
 estimated at any given location <span class="math notranslate nohighlight">\(y_i\)</span> are conditional on some
 neighboring values <span class="math notranslate nohighlight">\(y_j, _{j \neq i}\)</span> (in another word,
-correlated/covariated with these values):</p>
+correlated/covariated with these values):</div>
+</div>
 <div class="math notranslate nohighlight">
 \[y_i \mid y_j, j \neq i \sim \mathcal{N}(\alpha \sum_{j = 1}^n b_{ij} y_j, \sigma_i^{2})\]</div>
 <p>where <span class="math notranslate nohighlight">\(\sigma_i^{2}\)</span> is a spatially varying covariance parameter,
@@ -961,7 +959,7 @@ result in a zero-mean Gaussian distribution conditioned on a covariance
 function.</p>
 <p>In the <code class="docutils literal notranslate"><span class="pre">Stan</span></code> Code, matrix D is generated in the model using a
 <code class="docutils literal notranslate"><span class="pre">transformed</span> <span class="pre">data{}</span></code> block:</p>
-<div class="highlight-Stan notranslate"><div class="highlight"><pre><span></span><span class="kn">transformed data</span><span class="p">{</span>
+<div class="highlight-stan notranslate"><div class="highlight"><pre><span></span><span class="kn">transformed data</span><span class="p">{</span>
   <span class="kt">vector</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="n">zeros</span><span class="p">;</span>
   <span class="kt">matrix</span><span class="o">&lt;</span><span class="n">lower</span> <span class="o">=</span> <span class="mi">0</span><span class="o">&gt;</span><span class="p">[</span><span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="p">]</span> <span class="n">D</span><span class="p">;</span>
   <span class="p">{</span>
@@ -1460,7 +1458,6 @@ parameters are correlated.</p>
 
 
           </div>
-          
         </div>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -1480,34 +1477,11 @@ parameters are correlated.</p>
 
 
 <h3>Navigation</h3>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="../intro.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../prob_dists.html">Probability Distributions</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../examples.html">Examples</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="../examples.html#howto">Howto</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="sampler-stats.html">Sampler statistics</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Diagnosing_biased_Inference_with_Divergences.html">Diagnosing Biased Inference with Divergences</a></li>
-<li class="toctree-l3"><a class="reference internal" href="posterior_predictive.html">Posterior Predictive Checks</a></li>
-<li class="toctree-l3"><a class="reference internal" href="model_comparison.html">Model comparison</a></li>
-<li class="toctree-l3"><a class="reference internal" href="model_averaging.html">Model averaging</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Bayes_factor.html">Bayes Factors and Marginal Likelihood</a></li>
-<li class="toctree-l3"><a class="reference internal" href="howto_debugging.html">How to debug a model</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">PyMC3 Modeling tips and heuristic</a></li>
-<li class="toctree-l3"><a class="reference internal" href="LKJ.html">LKJ Cholesky Covariance Priors for Multivariate Normal Models</a></li>
-<li class="toctree-l3"><a class="reference internal" href="live_sample_plots.html">Live sample plots</a></li>
-<li class="toctree-l3"><a class="reference internal" href="sampling_compound_step.html">Compound Steps in Sampling</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../examples.html#applied">Applied</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../examples.html#glm">GLM</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../examples.html#survival-analysis">Survival Analysis</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../examples.html#gaussian-processes">Gaussian Processes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../examples.html#mixture-models">Mixture Models</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../examples.html#variational-inference">Variational Inference</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../examples.html#stochastic-gradient">Stochastic Gradient</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../examples.html">Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api.html">API Reference</a></li>
 </ul>
 
@@ -1532,8 +1506,8 @@ parameters are correlated.</p>
       &copy;2017, The PyMC Development Team.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.5</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
       
       |
       <a href="../_sources/notebooks/PyMC3_tips_and_heuristic.ipynb.txt"

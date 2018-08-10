@@ -9,7 +9,7 @@
     <title>GLM: Robust Regression with Outlier Detection &#8212; PyMC3 3.5 documentation</title>
     <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
@@ -31,8 +31,6 @@
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          
-
           <div class="body" role="main">
             
   
@@ -398,9 +396,9 @@ line</li>
 <p>where:</p>
 <div class="line-block">
 <div class="line"><span class="math notranslate nohighlight">\(\beta\)</span> = coefs = <span class="math notranslate nohighlight">\(\{1, \beta_{j \in X_{j}}\}\)</span></div>
-<div class="line"><span class="math notranslate nohighlight">\(\sigma\)</span> = the measured error in <span class="math notranslate nohighlight">\(y\)</span> in the dataset</div>
+<div class="line"><span class="math notranslate nohighlight">\(\sigma\)</span> = the measured error in <span class="math notranslate nohighlight">\(y\)</span> in the dataset
+<code class="docutils literal notranslate"><span class="pre">sigma_y</span></code></div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">sigma_y</span></code></p>
 <div class="section" id="Define-model">
 <h3>Define model<a class="headerlink" href="#Define-model" title="Permalink to this headline">¶</a></h3>
 <p><strong>NOTE:</strong> + We’re using a simple linear OLS model with Normally
@@ -606,9 +604,9 @@ inlier / outlier flags:</p>
 \[\mathcal{logL} = \sum_{i}^{i=N} log \left[ \frac{(1 - B_{i})}{\sqrt{2 \pi \sigma_{in}^{2}}} exp \left( - \frac{(x_{i} - \mu_{in})^{2}}{2\sigma_{in}^{2}} \right) \right] + \sum_{i}^{i=N} log \left[ \frac{B_{i}}{\sqrt{2 \pi (\sigma_{in}^{2} + \sigma_{out}^{2})}} exp \left( - \frac{(x_{i}- \mu_{out})^{2}}{2(\sigma_{in}^{2} + \sigma_{out}^{2})} \right) \right]\]</div>
 <div class="line-block">
 <div class="line">where:</div>
-<div class="line"><span class="math notranslate nohighlight">\(\bf{B}\)</span> is Bernoulli-distibuted</div>
+<div class="line"><span class="math notranslate nohighlight">\(\bf{B}\)</span> is Bernoulli-distibuted
+<span class="math notranslate nohighlight">\(B_{i} \in [0_{(inlier)},1_{(outlier)}]\)</span></div>
 </div>
-<p><span class="math notranslate nohighlight">\(B_{i} \in [0_{(inlier)},1_{(outlier)}]\)</span></p>
 <p>Note: A previous version of this example implemented the above
 likelihood directly in theano. However, we can implement it more
 efficiently using the Normal logp from PyMC3 and a <code class="docutils literal notranslate"><span class="pre">Potential</span></code>.</p>
@@ -889,7 +887,6 @@ Wiecki 2018-7-24.</p>
 
 
           </div>
-          
         </div>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -960,8 +957,8 @@ Wiecki 2018-7-24.</p>
       &copy;2017, The PyMC Development Team.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.5</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
       
       |
       <a href="../_sources/notebooks/GLM-robust-with-outlier-detection.ipynb.txt"

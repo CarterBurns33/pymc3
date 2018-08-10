@@ -9,7 +9,7 @@
     <title>Inference &#8212; PyMC3 3.5 documentation</title>
     <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
@@ -31,8 +31,6 @@
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          
-
           <div class="body" role="main">
             
   <div class="section" id="inference">
@@ -189,8 +187,8 @@ will start here.</li>
 </dd></dl>
 
 <dl class="function">
-<dt id="pymc3.sampling.sample_posterior_predictive">
-<code class="descclassname">pymc3.sampling.</code><code class="descname">sample_posterior_predictive</code><span class="sig-paren">(</span><em>trace</em>, <em>samples=None</em>, <em>model=None</em>, <em>vars=None</em>, <em>size=None</em>, <em>random_seed=None</em>, <em>progressbar=True</em><span class="sig-paren">)</span><a class="headerlink" href="#pymc3.sampling.sample_posterior_predictive" title="Permalink to this definition">¶</a></dt>
+<dt id="pymc3.sampling.sample_ppc">
+<code class="descclassname">pymc3.sampling.</code><code class="descname">sample_ppc</code><span class="sig-paren">(</span><em>trace</em>, <em>samples=None</em>, <em>model=None</em>, <em>vars=None</em>, <em>size=None</em>, <em>random_seed=None</em>, <em>progressbar=True</em><span class="sig-paren">)</span><a class="headerlink" href="#pymc3.sampling.sample_ppc" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate posterior predictive samples from a model given a trace.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -221,8 +219,8 @@ posterior predictive samples.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="pymc3.sampling.sample_posterior_predictive_w">
-<code class="descclassname">pymc3.sampling.</code><code class="descname">sample_posterior_predictive_w</code><span class="sig-paren">(</span><em>traces</em>, <em>samples=None</em>, <em>models=None</em>, <em>weights=None</em>, <em>random_seed=None</em>, <em>progressbar=True</em><span class="sig-paren">)</span><a class="headerlink" href="#pymc3.sampling.sample_posterior_predictive_w" title="Permalink to this definition">¶</a></dt>
+<dt id="pymc3.sampling.sample_ppc_w">
+<code class="descclassname">pymc3.sampling.</code><code class="descname">sample_ppc_w</code><span class="sig-paren">(</span><em>traces</em>, <em>samples=None</em>, <em>models=None</em>, <em>weights=None</em>, <em>random_seed=None</em>, <em>progressbar=True</em><span class="sig-paren">)</span><a class="headerlink" href="#pymc3.sampling.sample_ppc_w" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate weighted posterior predictive samples from a list of models and
 a list of traces according to a set of weights.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -320,39 +318,17 @@ If ‘ADVI’, number of iterations, if ‘nuts’, number of draws.</li>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>samples</strong> (<em>int</em>) – Number of samples from the prior predictive to generate. Defaults to 500.</li>
 <li><strong>model</strong> (Model (optional if in <cite>with</cite> context)) – </li>
-<li><strong>vars</strong> (<em>iterable</em>) – <dl class="docutils">
-<dt>A list of names of variables for which to compute the posterior predictive</dt>
-<dd>samples.</dd>
-</dl>
-<p>Defaults to <cite>model.named_vars</cite>.</p>
-</li>
+<li><strong>vars</strong> (<em>iterable</em>) – Variables for which to compute the posterior predictive samples.
+Defaults to <cite>model.named_vars</cite>.</li>
 <li><strong>random_seed</strong> (<em>int</em>) – Seed for the random number generator.</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><p><em>dict</em> –</p>
-<dl class="docutils">
-<dt>Dictionary with variable names as keys. The values are numpy arrays of prior</dt>
-<dd><p class="first last">samples.</p>
-</dd>
-</dl>
-</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><em>dict</em> – Dictionary with the variables as keys. The values are arrays of prior samples.</p>
 </td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<dl class="function">
-<dt id="pymc3.sampling.sample_ppc">
-<code class="descclassname">pymc3.sampling.</code><code class="descname">sample_ppc</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pymc3.sampling.sample_ppc" title="Permalink to this definition">¶</a></dt>
-<dd><p>This method is deprecated.  Please use <code class="xref py py-func docutils literal notranslate"><span class="pre">sample_posterior_predictive()</span></code></p>
-</dd></dl>
-
-<dl class="function">
-<dt id="pymc3.sampling.sample_ppc_w">
-<code class="descclassname">pymc3.sampling.</code><code class="descname">sample_ppc_w</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pymc3.sampling.sample_ppc_w" title="Permalink to this definition">¶</a></dt>
-<dd><p>This method is deprecated.  Please use <code class="xref py py-func docutils literal notranslate"><span class="pre">sample_posterior_predictive_w()</span></code></p>
 </dd></dl>
 
 </div>
@@ -2103,7 +2079,6 @@ same dimensional output</td>
 
 
           </div>
-          
         </div>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -2173,8 +2148,8 @@ same dimensional output</td>
       &copy;2017, The PyMC Development Team.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.5</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
       
       |
       <a href="../_sources/api/inference.rst.txt"

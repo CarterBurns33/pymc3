@@ -9,7 +9,7 @@
     <title>Sequential Monte Carlo with two gaussians &#8212; PyMC3 3.5 documentation</title>
     <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
@@ -29,8 +29,6 @@
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          
-
           <div class="body" role="main">
             
   
@@ -312,7 +310,7 @@ values of <span class="math notranslate nohighlight">\(\beta\)</span> will chang
 <p>Two more parameters that are automatically determined are: * The number
 of steps each Markov chain takes to explore the <em>tempered posterior</em>
 (<code class="docutils literal notranslate"><span class="pre">n_steps</span></code>) is determined from the acceptance rate at each stage, SMC
-use a <em>tune</em>interval_ to do this. * The width of the proposal
+use a <em>tune_interval</em> to do this. * The width of the proposal
 distribution (<code class="docutils literal notranslate"><span class="pre">MultivariateProposal</span></code>) is also adjusted adaptively
 based on the acceptance rate at each stage.</p>
 <p>Even when SMC uses the Metropolis-Hasting algorithm under the hood, it
@@ -485,7 +483,6 @@ pay attention to that one!</p>
 
 
           </div>
-          
         </div>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -534,8 +531,8 @@ pay attention to that one!</p>
       &copy;2017, The PyMC Development Team.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.5</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
       
       |
       <a href="../_sources/notebooks/SMC2_gaussians.ipynb.txt"

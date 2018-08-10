@@ -234,7 +234,7 @@ drawback of sampling, however, is that it’s often very slow, especially
 for high-dimensional models. That’s why more recently, <strong>variational
 inference</strong> algorithms have been developed that are almost as flexible
 as MCMC but much faster. Instead of drawing samples from the posterior,
-these algorithms instead fit a distribution (e.g. normal) to the
+these algorithms instead fit a distribution (e.g.&nbsp;normal) to the
 posterior turning a sampling problem into and optimization problem.
 <a class="reference external" href="http://arxiv.org/abs/1506.03431">ADVI</a> – Automatic Differentation
 Variational Inference – is implemented in PyMC3 and
@@ -275,8 +275,8 @@ frameworks like <a class="reference external" href="http://deeplearning.net/soft
 and <a class="reference external" href="https://www.tensorflow.org/">TensorFlow</a> allow flexible creation
 of abstract models that can then be optimized and compiled to CPU or
 GPU. * Learning algorithms: training on sub-sets of the data –
-stochastic gradient descent – allows us to train these models on
-massive amounts of data. Techniques like drop-out avoid overfitting. *
+stochastic gradient descent – allows us to train these models on massive
+amounts of data. Techniques like drop-out avoid overfitting. *
 Architectural: A lot of innovation comes from changing the input layers,
 like for convolutional neural nets, or the output layers, like for
 <a class="reference external" href="http://cbonnett.github.io/MDN_EDWARD_KERAS_TF.html">MDNs</a>.</p>
@@ -331,7 +331,7 @@ specialize on brands. However, due to the individual networks being
 connected at a higher layer, they would still share information with the
 other specialized sub-networks about features that are useful to all
 brands. Interestingly, different layers of the network could be informed
-by various levels of the hierarchy – e.g. early layers that extract
+by various levels of the hierarchy – e.g.&nbsp;early layers that extract
 visual lines could be identical in all sub-networks while the
 higher-order representations would be different. The hierarchical model
 would learn all that from the data. * <strong>Other hybrid architectures</strong>:
@@ -1041,7 +1041,7 @@ earlier draft.</p>
       &copy;2017, The PyMC Development Team.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.5</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.6</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
       
       |
